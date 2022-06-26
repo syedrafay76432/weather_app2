@@ -6,6 +6,8 @@ const forecast = require('./utils/forecast')
 const { response } = require('express')
 
 const app = express()
+const port = process.env.PORT || 3000
+
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, "../templates/views")
 const partialsPath = path.join(__dirname, "../templates/partials")
@@ -75,6 +77,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log("server is up on localhost 3000")
+app.listen(port, () => {
+    console.log("server is up on localhost "+port)
 })
